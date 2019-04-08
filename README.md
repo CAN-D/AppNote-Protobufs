@@ -7,7 +7,7 @@ First clone [the repo](https://github.com/CAN-D/AppNote-Protobufs) and [init & u
 
 
 Look at the `python_example.py` and `c_example.c` files for an actual usage.
-Once you install the requirements listed below, run the `make` command to generate the needed files to run and build the examples. Once everything is generated and built try running the examples:
+**Once you install the requirements listed below**, run the `make` command to generate the needed files to run and build the examples. Once everything is generated and built try running the examples:
 ``` bash
 # Generate and build
 make
