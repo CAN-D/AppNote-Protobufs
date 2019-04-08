@@ -3,11 +3,11 @@
 This document outlines what protobufs are, how to write them, how to generate code for them, and how to use them in C and Python.
 
 
-First clone the repo and [init & update](https://git-scm.com/docs/git-submodule) the submodules.
+First clone [the repo](https://github.com/CAN-D/AppNote-Protobufs) and [init & update](https://git-scm.com/docs/git-submodule) the submodules.
 
 
 Look at the `python_example.py` and `c_example.c` files for an actual usage.
-Once you install the requirements listed below, run the `make` command to generate the needed files to run and build the examples. Once everything is generated and built try running the examples:
+**Once you install the requirements listed below**, run the `make` command to generate the needed files to run and build the examples. Once everything is generated and built try running the examples:
 ``` bash
 # Generate and build
 make
@@ -18,7 +18,7 @@ python python_example.py
 ```
 
 # Background
-Protocol buffers are a flexible, language agnostic, lightweight method used for serializing structured data. A .proto file is created to describe the data that will be passed around. The protobuf compiler (protoc) can generate the coded needed to serialize and deserialize the data described by the .proto file. Languages such as C++, C#, Dart, Go, Java, and Python are all officially supported by the protobuf compiler.
+Protocol buffers are a flexible, language agnostic, and lightweight method used for serializing structured data. A `.proto` file is created to describe the data that will be passed around. The protobuf compiler (`protoc`) can generate the code needed to serialize and deserialize the data described by the `.proto` file. Languages such as C++, C#, Dart, Go, Java, and Python are all officially supported by the protobuf compiler.
 
 For embedded C applications [nanopb](https://github.com/nanopb/nanopb) can be used to generate the needed C source and header files needed to integrate protobufs into a project.
 
@@ -36,7 +36,7 @@ To use protobufs you need a few things:
 # Describing Data
 The first step is to decide what data you actually want to send. [Create a .proto](https://developers.google.com/protocol-buffers/docs/overview) file detailing how your data is structured. These files contain a series of messages that are used to structure your data. Each message has one or more data fields in it. Each data field holds a specific [type](https://developers.google.com/protocol-buffers/docs/proto3#scalar) of data. Messages can be nested within each other allowing for complex data structures to be defined. Aside from scalar types and other message types protobufs also support enumerations. Each field is given a [unique field number](https://developers.google.com/protocol-buffers/docs/proto3#assigning-field-numbers). This number is used during encoding and decoding and allows the data definition to evolve while still being backward compatible.
 
-Here is a simple protobuf file example demonstraiting scalar field types, nested messages and enumerations:
+Here is a simple protobuf file example demonstrating scalar field types, nested messages and enumerations:
 ```
 /* sample.proto */
 syntax = "proto3";
@@ -84,7 +84,7 @@ You should now have the generated files `sample_pb2.py`, `sample.pb.c`, and `sam
 
 # Usage
 ## Python
-### Encodeing Data
+### Encoding Data
 [Using the compiled files in Python](https://developers.google.com/protocol-buffers/docs/pythontutorial) is simple. First include the generated file in your file:
 ``` python
 import sample_pb2 as pb
@@ -105,7 +105,7 @@ my_message_bytes = my_message.SerializeToString()
 ```
 
 ### Decoding Data
-To decode data, simply do the opposite of encodeing. First create an object and deserialize the message:
+To decode data, simply do the opposite of encoding. First create an object and deserialize the message:
 ``` python
 your_message = pb.TopLevelMessage()
 your_message.ParseFromString(my_message_bytes)
@@ -119,7 +119,7 @@ assert your_message.baz == pb.ZEROTH
 ```
 
 ## C
-### Encodeing Data
+### Encoding Data
 In order to utilize the generated C source and headers, you need to include the nanopb encode and decode headers:
 ``` c
 #include <pb_decode.h>
@@ -170,7 +170,7 @@ If you want a challenge, try to encode the data in C, pipe it into a socket, and
 
 # Remarks
 This short note is only intended to get you started. There are many other features of protobufs that were not touched on including default values, "one of" fields, deserialization to JSON, and much more. Here are some resources to round out your understanding of protobufs:
-* [Protobuf documentation](https://developers.google.com/protocol-buffers/) for details about protobufs in general
-* [Nanopb documentation](https://jpa.kapsi.fi/nanopb/) for details about Nanopb
-* [Nanopb benchmark](https://github.com/PetteriAimonen/nanopb-benchmark) With some interesting makefiles
-* [Protobuf C](https://github.com/protobuf-c/protobuf-c) An alternative to Nanopb
+* [Protobuf documentation](https://developers.google.com/protocol-buffers/) - for details about protobufs in general
+* [Nanopb documentation](https://jpa.kapsi.fi/nanopb/) - for details about Nanopb
+* [Nanopb benchmark](https://github.com/PetteriAimonen/nanopb-benchmark) - with some interesting makefiles
+* [Protobuf C](https://github.com/protobuf-c/protobuf-c) - an alternative to Nanopb
