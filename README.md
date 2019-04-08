@@ -18,7 +18,7 @@ python python_example.py
 ```
 
 # Background
-Protocol buffers are a flexible, language agnostic, and lightweight method used for serializing structured data. A .proto file is created to describe the data that will be passed around. The protobuf compiler (protoc) can generate the coded needed to serialize and deserialize the data described by the .proto file. Languages such as C++, C#, Dart, Go, Java, and Python are all officially supported by the protobuf compiler.
+Protocol buffers are a flexible, language agnostic, and lightweight method used for serializing structured data. A `.proto` file is created to describe the data that will be passed around. The protobuf compiler (`protoc`) can generate the code needed to serialize and deserialize the data described by the `.proto` file. Languages such as C++, C#, Dart, Go, Java, and Python are all officially supported by the protobuf compiler.
 
 For embedded C applications [nanopb](https://github.com/nanopb/nanopb) can be used to generate the needed C source and header files needed to integrate protobufs into a project.
 
