@@ -20,3 +20,10 @@ sample.pb.c: sample.proto
 	make -BC nanopb/generator/proto
 	$(PROTOC) --python_out=. sample.proto
 	$(PROTOC) $(PROTOC_OPTS) --nanopb_out=. sample.proto
+
+clean:
+	rm c_example
+	rm -r c_example.dSYM/
+	rm sample.pb.c
+	rm sample.pb.h
+	rm sample_pb2.py
