@@ -84,7 +84,7 @@ You should now have the generated files `sample_pb2.py`, `sample.pb.c`, and `sam
 
 # Usage
 ## Python
-### Encodeing Data
+### Encoding Data
 [Using the compiled files in Python](https://developers.google.com/protocol-buffers/docs/pythontutorial) is simple. First include the generated file in your file:
 ``` python
 import sample_pb2 as pb
@@ -105,7 +105,7 @@ my_message_bytes = my_message.SerializeToString()
 ```
 
 ### Decoding Data
-To decode data, simply do the opposite of encodeing. First create an object and deserialize the message:
+To decode data, simply do the opposite of encoding. First create an object and deserialize the message:
 ``` python
 your_message = pb.TopLevelMessage()
 your_message.ParseFromString(my_message_bytes)
@@ -119,7 +119,7 @@ assert your_message.baz == pb.ZEROTH
 ```
 
 ## C
-### Encodeing Data
+### Encoding Data
 In order to utilize the generated C source and headers, you need to include the nanopb encode and decode headers:
 ``` c
 #include <pb_decode.h>
