@@ -170,7 +170,7 @@ If you want a challenge, try to encode the data in C, pipe it into a socket, and
 
 # Remarks
 This short note is only intended to get you started. There are many other features of protobufs that were not touched on including default values, "one of" fields, deserialization to JSON, and much more. Here are some resources to round out your understanding of protobufs:
-* [Protobuf documentation](https://developers.google.com/protocol-buffers/) for details about protobufs in general
-* [Nanopb documentation](https://jpa.kapsi.fi/nanopb/) for details about Nanopb
-* [Nanopb benchmark](https://github.com/PetteriAimonen/nanopb-benchmark) With some interesting makefiles
-* [Protobuf C](https://github.com/protobuf-c/protobuf-c) An alternative to Nanopb
+* [Protobuf documentation](https://developers.google.com/protocol-buffers/) - for details about protobufs in general
+* [Nanopb documentation](https://jpa.kapsi.fi/nanopb/) - for details about Nanopb
+* [Nanopb benchmark](https://github.com/PetteriAimonen/nanopb-benchmark) - with some interesting makefiles
+* [Protobuf C](https://github.com/protobuf-c/protobuf-c) - an alternative to Nanopb
