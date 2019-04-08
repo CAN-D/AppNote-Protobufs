@@ -1,0 +1,16 @@
+/* sample.proto */
+syntax = "proto3";
+
+message TopLevelMessage {
+  SubMessage foo = 1;
+  int32 bar = 2;
+  SampleEnum baz = 3;
+}
+
+message SubMessage { bytes thud = 1; }
+
+enum SampleEnum {
+  ZEROTH = 0;
+  FIRST = 1;
+  SECOND = 2;
+}
