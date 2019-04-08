@@ -3,7 +3,7 @@
 This document outlines what protobufs are, how to write them, how to generate code for them, and how to use them in C and Python.
 
 
-First clone the repo and [init & update](https://git-scm.com/docs/git-submodule) the submodules.
+First clone [the repo](https://github.com/CAN-D/AppNote-Protobufs) and [init & update](https://git-scm.com/docs/git-submodule) the submodules.
 
 
 Look at the `python_example.py` and `c_example.c` files for an actual usage.
