@@ -7,7 +7,7 @@ First clone [the repo](https://github.com/CAN-D/AppNote-Protobufs) and [init & u
 
 
 Look at the `python_example.py` and `c_example.c` files for an actual usage.
-**Once you install the requirements listed below**, run the `make` command to generate the needed files to run and build the examples. Once everything is generated and built try running the examples:
+Once you install the requirements listed below, run the `make` command to generate the needed files to run and build the examples. Once everything is generated and built try running the examples:
 ``` bash
 # Generate and build
 make
@@ -36,7 +36,7 @@ To use protobufs you need a few things:
 # Describing Data
 The first step is to decide what data you actually want to send. [Create a .proto](https://developers.google.com/protocol-buffers/docs/overview) file detailing how your data is structured. These files contain a series of messages that are used to structure your data. Each message has one or more data fields in it. Each data field holds a specific [type](https://developers.google.com/protocol-buffers/docs/proto3#scalar) of data. Messages can be nested within each other allowing for complex data structures to be defined. Aside from scalar types and other message types protobufs also support enumerations. Each field is given a [unique field number](https://developers.google.com/protocol-buffers/docs/proto3#assigning-field-numbers). This number is used during encoding and decoding and allows the data definition to evolve while still being backward compatible.
 
-Here is a simple protobuf file example demonstraiting scalar field types, nested messages and enumerations:
+Here is a simple protobuf file example demonstrating scalar field types, nested messages and enumerations:
 ```
 /* sample.proto */
 syntax = "proto3";
