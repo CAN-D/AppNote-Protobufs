@@ -13,10 +13,10 @@ $(NANOPB_DIR)/pb_encode.c \
 $(NANOPB_DIR)/pb_decode.c \
 $(NANOPB_DIR)/pb_common.c
 
-simple: $(CSRC)
+simple: $(SRC)
 	$(CC) $(CFLAGS) -oc_example $(SRC)
 
-simple.pb.c: simple.proto
+sample.pb.c: sample.proto
 	make -BC nanopb/generator/proto
 	$(PROTOC) --python_out=. sample.proto
 	$(PROTOC) $(PROTOC_OPTS) --nanopb_out=. sample.proto
