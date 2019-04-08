@@ -1,6 +1,11 @@
 # AppNote-Protobufs
 ### How to Use This Document
 This document outlines what protobufs are, how to write them, how to generate code for them, and how to use them in C and Python.
+
+
+First clone the repo and [init & update](https://git-scm.com/docs/git-submodule) the submodules.
+
+
 Look at the `python_example.py` and `c_example.c` files for an actual usage.
 Once you install the requirements listed below, run the `make` command to generate the needed files to run and build the examples. Once everything is generated and built try running the examples:
 ``` bash
@@ -161,7 +166,7 @@ You can now access the fields of the message struct.
 
 # What Next?
 Now that you can serialize and deserialize data, try to transmit and receive that data. You can use anything really: Unix sockets, serial, USB, CAN, BLE, Wifi...
-If you want a challenge, try to encode the data in C, pipe it into a socket, and then read it out in python.
+If you want a challenge, try to encode the data in C, pipe it into a socket, and then read it out and decode it in Python.
 
 # Remarks
 This short note is only intended to get you started. There are many other features of protobufs that were not touched on including default values, "one of" fields, deserialization to JSON, and much more. Here are some resources to round out your understanding of protobufs:
